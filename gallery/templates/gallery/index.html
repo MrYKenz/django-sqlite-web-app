@@ -1,0 +1,13 @@
+{% extends 'gallery/base.html'%}
+
+{% block body %}
+	{% if all_groups %}
+		<ul>
+			{% for group in all_groups %}
+			<a href="{% url 'gallery:info' group.id %}">{{ group.group_name }}</a>
+			{% endfor %}
+		</ul>
+	{% else %}
+		<p>No Images</p>
+	{% endif %}
+{% endblock %}

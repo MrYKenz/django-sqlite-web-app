@@ -1,0 +1,33 @@
+{% extends 'gallery/base.html'%}
+
+{% block title %}Images{% endblock %}
+
+{% block body %}
+
+    {{ group.group_name }}
+    <p>{{ group.description }}</p>
+
+    {% for image in group.image_set.all %}
+            <img type="image" src="{{ image.url }}" height=250 width=250 />
+    {% endfor %}
+
+    {% if error_msg %}
+        <p><b>{{ error_msg }}</b></p>
+    {% endif %}
+
+
+        <form action="{% url 'gallery:fave' group.id %}" method="post">
+            {% csrf_token %}
+            {% for image in group.image_set.all %}
+                <input type="radio" id="{{ forloop.counter }}" name="image" value="{{ image.id }}" />
+                <label for="{{ forloop.counter }}">
+                    {{ image.description }}
+                    {% if image.is_fave %}
+                        <div class="heart">❤</div>
+                    {% endif %}
+                </label><br>
+            {% endfor %}
+            <input type="submit" value="Like" class="button">
+        </form>
+
+{% endblock %}

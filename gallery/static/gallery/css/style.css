@@ -1,0 +1,40 @@
+body{
+	margin: 5;
+	padding: 5;
+	text-align: left;
+	font-family: century gothic;
+	font-size: 28px;
+	color: #E88F00;
+	background: #FFF5B7
+}
+
+a {
+	text-decoration: none;
+	padding: 0 1em;
+	letter-spacing: 0.1em;
+	color: #E88F00;
+	display: inline-block;
+	/*font-size: 40px;*/
+    -webkit-transition-duration: 0.8s; /* Chrome and Safari */
+    transition-duration: 0.8s;
+}
+
+a:hover {
+	text-decoration: none;
+	background: #FFCD54;
+	border-radius:10px;
+	color: #C38E00;
+}
+
+.heart {
+    color: red
+}
+
+.button {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.navbar{
+    font-size: 14px;
+    font-family: 'Anton', century gothic;
+}
